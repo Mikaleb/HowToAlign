@@ -1,4 +1,6 @@
-# Nuxt 3 Minimal Starter
+# How To Align
+
+How To Align is a web application that helps you align your text and images in a way that looks good. It is built with [Nuxt 3](https://nuxt.com) and [Tailwind CSS](https://tailwindcss.com).
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
