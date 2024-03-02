@@ -1,85 +1,47 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import LogoHta from '@/components/LogoHta.vue'
+import { RouterView } from 'vue-router'
+import IeChoice from '@/components/IeChoice.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+    <Logo-Hta />
+    <div id="explainer">
+      <p>
+        Forgot how to center something ? Need to do a weird trick to bottom-right align flex for IE6
+        ?
+      </p>
+      <p>Got you covered !</p>
+    </div>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
+    <div id="links">
+      <Ie-Choice />
+      <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-      </nav>
+      </nav> -->
     </div>
   </header>
 
   <RouterView />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  @apply max-h-32 flex p-4 absolute w-full;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
+#links {
+  @apply ml-auto flex flex-row;
+  // align to far right
+  @apply flex flex-col justify-center;
   nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+    @apply flex space-x-4;
   }
+}
+
+#explainer {
+  @apply ml-8 flex flex-col  justify-center;
 }
 </style>
